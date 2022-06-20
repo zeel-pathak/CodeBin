@@ -1,0 +1,43 @@
+body {
+    background-color: #002b36;
+    margin: 0;
+}
+
+.wrapper {
+    display:flex;
+    padding: 1rem .5rem;
+    font-size: 1rem;
+    position: relative;
+}
+
+ pre {
+    margin: 0;
+}
+
+#code-display {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.line-numbers {
+    color: #7D7D7D;
+    font-family: monospace;
+    text-align: end;
+}
+
+.textarea {
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    padding: 0;
+    margin-left: 1rem;
+    color: #7D7D7D;
+    border: none;
+    outline: none;
+}
+
+.nav-extended {
+    position: sticky;
+    background-color: transparent;
+    margin-bottom: 64px;
+}
