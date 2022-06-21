@@ -6,8 +6,7 @@ body {
 .wrapper {
     display:flex;
     padding: 1rem .5rem;
-    font-size: 1rem;
-    position: relative;
+    font-size: 1.5rem;
 }
 
  pre {
@@ -34,10 +33,18 @@ body {
     color: #7D7D7D;
     border: none;
     outline: none;
+    font-size: 1.5rem;
 }
 
 .nav-extended {
-    position: sticky;
-    background-color: transparent;
-    margin-bottom: 64px;
+    position: fixed;
+    background-color: #002b36 ;
+}
+
+form {
+    padding-top: 8rem;
+}
+
+li:hover{
+    background-color: #0595b8;
 }

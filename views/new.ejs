@@ -21,14 +21,15 @@
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#test1">Test 1</a></li>
-        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-        <li class="tab"><a href="#test4">Test 4</a></li>
+        <li style="user-select:none;" class="tab"><a  onclick= submit()>Save</a></li>
+        <li style="user-select:none; background-color: #0595b8; cursor: not-allowed;" class="tab"><a class="active" style="pointer-events: none" >New</a></li>
+        <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none">Duplicate and Edit</a></li>
+        <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none">Just Text</a></li>
       </ul>
     </div>
   </nav>
 
-    <form action="/save" method="post">
+    <form id="formData" action="/save" method="post">
         <div class="wrapper">
             <div class="line-numbers">
                 &gt;
@@ -41,5 +42,14 @@
 </body>
 <script>
     autosize(document.querySelector('textarea'))
+
+    const submit = () => {
+alert(document.getElementsByClassName("textarea").value)
+      // if(document.getElementByClassName("textarea").value !== null){
+      // alert("hurray! the anchor tag was clicked")
+        
+      //   document.getElementById("formData").submit()
+      // }
+    }
 </script>
 </html>
