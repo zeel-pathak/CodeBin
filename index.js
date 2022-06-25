@@ -46,7 +46,7 @@ app.get("/:id", async(req,res) => {
 
     try{
         const value = await documentSchema.findById(id);
-        res.render('default', {code : value.code, lineNumber : value.code.split("\n").length, isCode:true, duplicateEdit: true, id});
+        res.render('default', {code : value.code, lineNumber : value.code.split("\n").length, isCode:true, duplicateEdit: true, justText:true, id});
     } catch {
         res.redirect('/new');
     }
@@ -57,11 +57,23 @@ app.get("/:id/duplicateEdit",async(req,res) => {
 
     try{
         const value = await documentSchema.findById(id);
-        res.render('new');
+        res.render('new', {value: value.code});
     } catch {
-        res.redirect('/');
+        res.redirect(`/${id}`);
     }
 });
 
+app.get("/:id/justText", async(req,res) => {
+    
+    const id = req.params.id
+    try{
+        console.log(id)
+        const value = await documentSchema.findById(id);
+        console.log(value)
+        res.render('jusText', {value: value.code});
+    } catch {
+        res.redirect(`/${id}`);
+    }
+});
 //Port on which the app will listen
-app.listen(3000);
+app.listen(5000);

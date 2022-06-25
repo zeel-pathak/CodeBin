@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>&#128048; Code Bin &#128048;</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Compiled and minified CSS -->
@@ -26,9 +26,9 @@
           <ul class="tabs tabs-transparent">
             <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none" onclick= submit()>Save</a></li>
             <li style="user-select:none; cursor: not-allowed;" class="tab"><a href="/new" >New</a></li>
-            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.duplicateEdit ? '' : 'None' %> " href="<%= locals.id%>/duplicateEdit">Duplicate and Edit</a></li>
-            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none">Just Text</a></li>
-          </ul>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.duplicateEdit ? '' : 'None' %> " href="<%= locals.id %>/duplicateEdit">Duplicate and Edit</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.justText ? '' : 'None' %> " href="<%= locals.id %>/justText">Just Text</a></li>
+           </ul>
         </div>
     </nav>
     
