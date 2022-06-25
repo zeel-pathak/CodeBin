@@ -13,32 +13,28 @@ mongoose.connect(process.env.MONGO_URL,(err) => {
     if(err){
         throw err
     }
-    console.log("Connected")
 })
 
 //Routes
 app.get('/', (req,res) => {
     const code = 
     `This is the default page of CodeBin and this`
-    res.render('default', { code, lineNumber : code.split("\n").length })
+    res.render('default', { code, lineNumber : code.split("\n").length, page: "> Home" })
 });
 
 app.get('/new', (req,res) => {
-    res.render('new');
+    res.render('new', {page:"> new"});
 });
 
 app.post('/save', async (req,res) => {
     const code = req.body.value;
-    console.log(code)
+ 
     try{
-    const doc = await documentSchema.create({code})  
-
-    console.log(doc)
-    res.redirect(`/${doc._id}`);
-
-} catch {
-    console.log("error")
-}
+        const doc = await documentSchema.create({code})  
+        res.redirect(`/${doc._id}`);
+    } catch {  
+        res.render('new', {value: code});
+    }
 });
 
 app.get("/:id", async(req,res) => {
@@ -46,7 +42,7 @@ app.get("/:id", async(req,res) => {
 
     try{
         const value = await documentSchema.findById(id);
-        res.render('default', {code : value.code, lineNumber : value.code.split("\n").length, isCode:true, duplicateEdit: true, justText:true, id});
+        res.render('default', {code : value.code, lineNumber : value.code.split("\n").length, isCode:true, duplicateEdit: true, justText:true, id, page: "> Code"});
     } catch {
         res.redirect('/new');
     }
@@ -57,7 +53,7 @@ app.get("/:id/duplicateEdit",async(req,res) => {
 
     try{
         const value = await documentSchema.findById(id);
-        res.render('new', {value: value.code});
+        res.render('new', {value: value.code, page: "> duplicate & edit"});
     } catch {
         res.redirect(`/${id}`);
     }
@@ -67,13 +63,13 @@ app.get("/:id/justText", async(req,res) => {
     
     const id = req.params.id
     try{
-        console.log(id)
         const value = await documentSchema.findById(id);
-        console.log(value)
-        res.render('jusText', {value: value.code});
+        res.render('jusText', {value: value.code, page: "> just text"});
     } catch {
         res.redirect(`/${id}`);
     }
 });
+
 //Port on which the app will listen
-app.listen(5000);
+const port = process.env.PORT || 5000;
+app.listen(port);

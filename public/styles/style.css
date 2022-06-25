@@ -1,6 +1,10 @@
 body {
-    background-color: #002b36;
+    background-color: #0c0d0e;
     margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .wrapper {
@@ -19,7 +23,7 @@ body {
 }
 
 .line-numbers {
-    color: #7D7D7D;
+    color: #20c20e;
     font-family: monospace;
     text-align: end;
 }
@@ -30,7 +34,7 @@ body {
     width: 100%;
     padding: 0;
     margin-left: 1rem;
-    color: #7D7D7D;
+    color: #20c20e;
     border: none;
     outline: none;
     font-size: 1.5rem;
@@ -38,7 +42,7 @@ body {
 
 .nav-extended {
     position: fixed;
-    background-color: #002b36 ;
+    background-color: #0C0D0E;
 }
 
 form {
@@ -46,5 +50,5 @@ form {
 }
 
 li:hover{
-    background-color: #0595b8;
+    background-color: #129204;
 }

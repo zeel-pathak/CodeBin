@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&#128048; Code Bin &#128048;</title>
+    <title>Code Bin <%= locals.page%></title>
+    <link rel="icon" href="https://cdn.imgbin.com/10/9/11/trash-icon-bin-icon-pollution-icon-LtExeHnU.jpg">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/base16/solarized-dark.min.css" integrity="sha512-kBHeOXtsKtA97/1O3ebZzWRIwiWEOmdrylPrOo3D2+pGhq1m+1CroSOVErIlsqn1xmYowKfQNVDhsczIzeLpmg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/ir-black.min.css" integrity="sha512-koyJNDRWiSkXWV9VpMDJXZnwgO5wB1VsSw5O7XpkYFBL9Yjp6QiotG1CPuD3iHbOw5a3obVP5guUzxhJA0Dmhw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/base16/brewer.min.css" integrity="sha512-D7LJSDa4DnNoW3XjAUYmtldC+oWiqsrU4wy0lW2ZGwQUXdBlo+/doY8UFrvZcccxkNAHtLXZubg7e3nRsavkqA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>hljs.highlightAll();</script>
 </head>
 <body>
@@ -20,14 +22,14 @@
 
     <nav class="nav-extended">
         <div class="nav-wrapper" style="padding-left: 1.5rem;">
-          <a href="/" class="brand-logo">&#128048; Code Bin &#128048;</a>
+          <a href="/" class="brand-logo">&#128465; Code Bin &#128465;</a>
         </div>
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
-            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none" onclick= submit()>Save</a></li>
-            <li style="user-select:none; cursor: not-allowed;" class="tab"><a href="/new" >New</a></li>
-            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.duplicateEdit ? '' : 'None' %> " href="<%= locals.id %>/duplicateEdit">Duplicate and Edit</a></li>
-            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.justText ? '' : 'None' %> " href="<%= locals.id %>/justText">Just Text</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none" onclick= submit()>&#128190; Save</a></li>
+            <li style="user-select:none; cursor: not-allowed;" class="tab"><a href="/new"> &#128196; New</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.duplicateEdit ? '' : 'None' %> " href="<%= locals.id %>/duplicateEdit">&#128221; Duplicate and Edit</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.justText ? '' : 'None' %> " href="<%= locals.id %>/justText">&#128394; Just Text</a></li>
            </ul>
         </div>
     </nav>
