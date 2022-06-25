@@ -7,17 +7,41 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/base16/solarized-dark.min.css" integrity="sha512-kBHeOXtsKtA97/1O3ebZzWRIwiWEOmdrylPrOo3D2+pGhq1m+1CroSOVErIlsqn1xmYowKfQNVDhsczIzeLpmg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>hljs.highlightAll();</script>
 </head>
 <body>
-    <div class="wrapper">
+
+
+
+    <nav class="nav-extended">
+        <div class="nav-wrapper" style="padding-left: 1.5rem;">
+          <a href="/" class="brand-logo">&#128048; Code Bin &#128048;</a>
+        </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none" onclick= submit()>Save</a></li>
+            <li style="user-select:none; cursor: not-allowed;" class="tab"><a href="/new" >New</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: <%= locals.duplicateEdit ? '' : 'None' %> " href="<%= locals.id%>/duplicateEdit">Duplicate and Edit</a></li>
+            <li style="user-select:none; cursor: not-allowed" class="tab"><a style="pointer-events: none">Just Text</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+    
+
+    
+    <div style="padding-top: 8rem;" class="wrapper">
         <div class="line-numbers">
             <% for(let i=1;i<=lineNumber; i++) {%>
                 <div> <%= i %></div>
             <% } %>
         </div>
-    <pre><code id="code-display" class="language-plaintext"> <%= code %></code></pre>
+    <pre><code id="code-display" class=" <%= locals.isCode ? '' : 'language-plaintext' %>" > <%=code%></code></pre>
     </div>
 </body>
 </html>

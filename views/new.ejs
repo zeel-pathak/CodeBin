@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>&#128048; Code Bin &#128048;</title>
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.20/autosize.min.js" integrity="sha512-EAEoidLzhKrfVg7qX8xZFEAebhmBMsXrIcI0h7VPx2CyAyFHuDvOAUs9CEATB2Ou2/kuWEDtluEVrQcjXBy9yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="styles/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
@@ -16,8 +16,8 @@
 <body>
 
 <nav class="nav-extended">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper" style="padding-left: 1.5rem;">
+      <a href="/" class="brand-logo">&#128048; Code Bin &#128048;</a>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
@@ -34,7 +34,7 @@
             <div class="line-numbers">
                 &gt;
             </div>
-            <textarea class="textarea" autofocus name="value">
+            <textarea id="textarea" class="textarea" autofocus name="value">
                 <%= locals.value %>
             </textarea>
         </div>
@@ -44,12 +44,10 @@
     autosize(document.querySelector('textarea'))
 
     const submit = () => {
-alert(document.getElementsByClassName("textarea").value)
-      // if(document.getElementByClassName("textarea").value !== null){
-      // alert("hurray! the anchor tag was clicked")
-        
-      //   document.getElementById("formData").submit()
-      // }
+
+      if(document.getElementById("textarea").value.trim() !== ''){
+          document.getElementById("formData").submit()
+      }
     }
 </script>
 </html>
