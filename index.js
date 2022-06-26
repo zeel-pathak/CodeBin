@@ -3,6 +3,7 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 import documentSchema from './model/documentSchema.js'
+import {text} from './text.js'
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -17,8 +18,8 @@ mongoose.connect(process.env.MONGO_URL,(err) => {
 
 //Routes
 app.get('/', (req,res) => {
-    const code = 
-    `This is the default page of CodeBin and this`
+    const code = text
+
     res.render('default', { code, lineNumber : code.split("\n").length, page: "> Home" })
 });
 

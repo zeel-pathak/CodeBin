@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
 .wrapper {
     display:flex;
     padding: 1rem .5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
  pre {
