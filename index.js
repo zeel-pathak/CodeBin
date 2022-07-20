@@ -74,6 +74,17 @@ app.get("/:id/justText", async(req,res) => {
 
 // API for CLI tool
 
+app.post('/saveCLI', async (req,res) => {
+    const code = req.body.value;
+    const extension = req.body.extension;
+ 
+    try{
+        const doc = await documentSchema.create({code, extension})  
+        res.status(200).send(`https://codebinn.herokuapp.com/${doc._id}`);
+    } catch {  
+        res.send("Error");
+    }
+});
 
 //Port on which the app will listen
 const port = process.env.PORT || 5000;
