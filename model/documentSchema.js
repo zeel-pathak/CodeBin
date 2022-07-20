@@ -6,6 +6,10 @@ const documentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    extension: {
+        type: String,
+        default: "null"
+    },
     expireAt: {
         type: Date,
         default: Date.now() + (604800000)   // expires in 7 Days

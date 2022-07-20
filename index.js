@@ -71,6 +71,10 @@ app.get("/:id/justText", async(req,res) => {
     }
 });
 
+
+// API for CLI tool
+
+
 //Port on which the app will listen
 const port = process.env.PORT || 5000;
 app.listen(port);
