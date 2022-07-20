@@ -82,7 +82,7 @@ app.post('/saveCLI', async (req,res) => {
         const doc = await documentSchema.create({code, extension})  
         res.status(200).send(`https://codebinn.herokuapp.com/${doc._id}`);
     } catch {  
-        res.send("Error");
+        res.status(400).send("Error");
     }
 });
 
