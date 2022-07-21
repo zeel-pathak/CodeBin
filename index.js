@@ -74,6 +74,7 @@ app.get("/:id/justText", async(req,res) => {
 
 // API for CLI tool
 
+//Upload API
 app.post('/saveCLI', async (req,res) => {
     const code = req.body.value;
     const extension = req.body.extension;
@@ -85,6 +86,17 @@ app.post('/saveCLI', async (req,res) => {
         res.status(400).send("Error");
     }
 });
+
+//Download API
+app.post('downloadCLI', async (req,res) => {
+    const id = req.body.id;
+    try{
+        const value = await documentSchema.findById(id);
+        res.status(200).send({code : value.code, extension : value.extension});
+    } catch (err){
+        res.status(400).send(err);
+    }
+})
 
 //Port on which the app will listen
 const port = process.env.PORT || 5000;
