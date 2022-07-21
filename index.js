@@ -88,13 +88,13 @@ app.post('/saveCLI', async (req,res) => {
 });
 
 //Download API
-app.post('downloadCLI', async (req,res) => {
+app.post('/downloadCLI', async (req,res) => {
     const id = req.body.id;
     try{
         const value = await documentSchema.findById(id);
         res.status(200).send({code : value.code, extension : value.extension});
     } catch (err){
-        res.status(400).send(err);
+        res.status(400).send("Error");
     }
 })
 
